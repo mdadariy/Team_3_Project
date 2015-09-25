@@ -1,70 +1,26 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Arrays;
+import Model.Individual;
+import Processor.ParseData;
+import java.lang.Exception;
 
 public class readfile {
 	public static void main(String[] args) {
 		String filename = "My-Family-11-Sep-2015.ged";
-		String line = null;
-		
+		ParseData p = new ParseData();
 		try {
-			FileReader reader = new FileReader(filename);
-			BufferedReader bufferedReader = new BufferedReader(reader);
-			
-			if((line = bufferedReader.readLine()) != null) {
-				System.out.println(line);
-			}
-			
-			while ((line = bufferedReader.readLine()) != null) {
-				System.out.println("");
-				
-				// line1
-				System.out.println(line);
-				
-				// Splitting the line into words
-				String[] words = line.split(" ");
-				
-				//line 2 should print level
-				System.out.println("Level is " + words[0]); 
-				
-				//line 3 should print tag
-				System.out.print("Tag is ");
-				if(Integer.parseInt(words[0]) == 0) {
-					if(isValidTag(words[1]) == false) {
-						if(isValidTag(words[2]) == false) {
-							System.out.println("Invalid tag");	
-						}
-						else {
-							System.out.println(words[2]);
-						}	
-					}
-					else {
-						System.out.println(words[1]);
-					}	
+			p.readFile(filename);
+			for (int i = 0; i < p.individuals.size(); i++) {
+				Individual ind = p.individuals.get(i);
+				System.out.println("ID: " + ind.getId());
+				System.out.println("Given Name: " + ind.getGivenName());
+				System.out.println("Family Name: " + ind.getSurName());
+				System.out.println("Sex: " + ind.getSex());
+				System.out.println("Birth Date: " + ind.getBirthDate());
+				if (ind.getDeathDate() != null) {
+					System.out.println("Death Date: " + ind.getDeathDate());
 				}
-				else {
-					System.out.println( (isValidTag(words[1]) ? words[1] : "Invalid tag") );
-				}
+				System.out.println();
 			}
-			bufferedReader.close();
-		} 
-		catch (IOException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
 		}
 	}
-	
-	public static boolean isValidTag(String tagName) {
-		
-		String validTags[] = {"SEX", "BIRT", "DEAT", "INDI","NAME","FAMC","FAMS","FAM","MARR","HUSB","WIFE","CHIL","DIV","DATE","HEAD","TRLR","NOTE"};
-		
-		if(Arrays.asList(validTags).contains(tagName)) {
-			return true;
-		}
-		else {
-			return false;
-		}
-		
-	}
-
 }
