@@ -2,6 +2,8 @@ import Model.Individual;
 import Processor.ParseData;
 import java.lang.Exception;
 
+import Test.*;
+
 public class readfile {
 	public static void main(String[] args) {
 		String filename = "My-Family-11-Sep-2015.ged";
@@ -18,6 +20,9 @@ public class readfile {
 				if (ind.getDeathDate() != null) {
 					System.out.println("Death Date: " + ind.getDeathDate());
 				}
+
+				UnitId.checkUniqueId(ind, p.individuals);
+				// This is the part that individuals can be tested.
 				System.out.println();
 			}
 		} catch (Exception e) {
