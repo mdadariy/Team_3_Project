@@ -55,7 +55,7 @@ public class ParseData {
                         if (fam != null) {
                             families.add(fam);
                             fam.setId(getId(tag));
-                            isIndividule = true;
+                            isIndividule = false;
                         }
                     } else {
                         isIndividule = false;
@@ -76,6 +76,27 @@ public class ParseData {
                             isBirthDate = false;
                         }
                     } else {
+                        if ("HUSB".equals(tag)) {
+                            fam.setHusband(getId(arguments));
+                        } else if ("WIFE".equals(tag)) {
+                            fam.setWife(getId(arguments));
+                        }
+                        if ("MARR".equals(tag)) {
+                            line = bufferRead.readLine();
+                            String[] nextLine = (line.split("\\s+"));
+                            if (nextLine[1].equals("DATE")) {
+                                String wedDate = nextLine[2] + " " + nextLine[3] + " " + nextLine[4];
+                                fam.setWeddingDate(wedDate);
+                            }
+                        } else if ("DIV".equals(tag)) {
+                            line = bufferRead.readLine();
+                            String[] nextLine = (line.split("\\s+"));
+                            if (nextLine[1].equals("DATE")) {
+                                String divDate = nextLine[2] + " " + nextLine[3] + " " + nextLine[4];
+                                fam.setDivorceDate(divDate);
+                            }
+
+                        }
                     }
                 }
                 if (level == 2) {

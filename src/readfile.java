@@ -1,3 +1,4 @@
+import Model.Family;
 import Model.Individual;
 import Processor.ParseData;
 import java.lang.Exception;
@@ -6,10 +7,11 @@ import Test.*;
 
 public class readfile {
 	public static void main(String[] args) {
-		String filename = "My-Family-11-Sep-2015.ged";
+		String filename = "My-family-11-Sep-2015.ged";
 		ParseData p = new ParseData();
 		try {
 			p.readFile(filename);
+			System.out.println("=== Individuals Information ===");
 			for (int i = 0; i < p.individuals.size(); i++) {
 				Individual ind = p.individuals.get(i);
 				System.out.println("ID: " + ind.getId());
@@ -22,7 +24,20 @@ public class readfile {
 				}
 
 				UnitId.checkUniqueId(ind, p.individuals);
+				if (ind.getDeathDate() != null) {
+					CompareBirthDate.compare(ind.getBirthDate(), ind.getDeathDate());
+				}
 				// This is the part that individuals can be tested.
+				System.out.println();
+			}
+			System.out.println("=== Families Information ===");
+			for (int i = 0; i < p.families.size(); i++) {
+				Family fam = p.families.get(i);
+				System.out.println("Family ID: " + fam.getId());
+				System.out.println("Family HUSBAND: " + fam.getHusband());
+				System.out.println("Family Wife: " + fam.getWife());
+				System.out.println("Family Wedding Date: " + fam.getWeddingDate());
+				System.out.println("Family Divorce Date: " + fam.getDivorceDate());
 				System.out.println();
 			}
 		} catch (Exception e) {
