@@ -38,7 +38,13 @@ public class readfile {
 				System.out.println("Family Wife: " + fam.getWife());
 				System.out.println("Family Wedding Date: " + fam.getWeddingDate());
 				System.out.println("Family Divorce Date: " + fam.getDivorceDate());
+
+				if (fam.getDivorceDate() != null && fam.getWeddingDate() != null) {
+					Test.CompareDivorceMarriage.compare(fam.getWeddingDate(), fam.getDivorceDate());
+				}
 				System.out.println();
+
+
 			}
 		} catch (Exception e) {
 		}
