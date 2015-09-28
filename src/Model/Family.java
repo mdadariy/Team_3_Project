@@ -7,8 +7,10 @@ package Model;
 public class Family {
 
     private String id;
-    private String husband;
-    private String wife;
+    private Individual husband;
+    private Individual wife;
+    private String husbandId;
+    private String wifeId;
     private String type;
     private String weddingDate;
     private String divorceDate;
@@ -29,20 +31,20 @@ public class Family {
         this.type = type;
     }
 
-    public String getHusband() {
-        return husband;
+    public String getHusbandId() {
+        return husbandId;
     }
 
-    public void setHusband(String husband) {
-        this.husband = husband;
+    public void setHusbandId(String husbandId) {
+        this.husbandId = husbandId;
     }
 
-    public String getWife() {
-        return wife;
+    public String getWifeId() {
+        return wifeId;
     }
 
-    public void setWife(String wife) {
-        this.wife = wife;
+    public void setWifeId(String wifeId) {
+        this.wifeId = wifeId;
     }
 
     public String getWeddingDate() {
@@ -59,5 +61,21 @@ public class Family {
 
     public void setDivorceDate(String ddate) {
         this.divorceDate = ddate;
+    }
+
+    public void setHusband(Individual husband) {
+        this.husband = husband;
+    }
+
+    public void setWife(Individual wife) {
+        this.wife = wife;
+    }
+
+    public Individual getHusband() {
+        return this.husband;
+    }
+
+    public Individual getWife() {
+        return this.wife;
     }
 }

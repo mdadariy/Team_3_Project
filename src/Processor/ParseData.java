@@ -77,9 +77,9 @@ public class ParseData {
                         }
                     } else {
                         if ("HUSB".equals(tag)) {
-                            fam.setHusband(getId(arguments));
+                            fam.setHusbandId(getId(arguments));
                         } else if ("WIFE".equals(tag)) {
-                            fam.setWife(getId(arguments));
+                            fam.setWifeId(getId(arguments));
                         }
                         if ("MARR".equals(tag)) {
                             line = bufferRead.readLine();
@@ -117,6 +117,32 @@ public class ParseData {
 
         } catch (FileNotFoundException ex) {
             System.out.println("File is not found!");
+        }
+
+        setIndividualsInFamilies();
+    }
+
+    public Individual getIndividual(String id) {
+        if (individuals != null && !individuals.isEmpty()) {
+            for (int i = 0; i < individuals.size(); i++) {
+                Individual individualObject = individuals.get(i);
+                if (individualObject.getId().equals(id)) {
+                    return individualObject;
+                }
+            }
+        }
+        return null;
+    }
+
+    private void setIndividualsInFamilies() {
+        for (int i = 0; i < families.size(); i++) {
+            Family fam = families.get(i);
+            if (fam.getHusbandId() != null) {
+                fam.setHusband(getIndividual(fam.getHusbandId()));
+            }
+            if (fam.getWifeId() != null) {
+                fam.setWife(getIndividual(fam.getWifeId()));
+            }
         }
     }
 

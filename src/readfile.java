@@ -27,6 +27,10 @@ public class readfile {
 				if (ind.getDeathDate() != null) {
 					CompareBirthDate.compare(ind.getBirthDate(), ind.getDeathDate());
 				}
+
+				if (ind.getBirthDate() != null) {
+					CompareWithCurrentDate.compare(ind.getBirthDate());
+				}
 				// This is the part that individuals can be tested.
 				System.out.println();
 			}
@@ -34,14 +38,21 @@ public class readfile {
 			for (int i = 0; i < p.families.size(); i++) {
 				Family fam = p.families.get(i);
 				System.out.println("Family ID: " + fam.getId());
-				System.out.println("Family HUSBAND: " + fam.getHusband());
-				System.out.println("Family Wife: " + fam.getWife());
+				System.out.println("Family HUSBAND: " + fam.getHusband().getName());
+				System.out.println("Family Wife: " + fam.getWife().getName());
 				System.out.println("Family Wedding Date: " + fam.getWeddingDate());
 				System.out.println("Family Divorce Date: " + fam.getDivorceDate());
 
 				if (fam.getDivorceDate() != null && fam.getWeddingDate() != null) {
 					Test.CompareDivorceMarriage.compare(fam.getWeddingDate(), fam.getDivorceDate());
 				}
+
+				if (fam.getHusband() != null && fam.getWeddingDate() != null)
+					CompareBirthWithMarriage.compare(fam.getHusband().getBirthDate(), fam.getWeddingDate());
+
+				if (fam.getWife() != null && fam.getWeddingDate() != null)
+					CompareBirthWithMarriage.compare(fam.getWife().getBirthDate(), fam.getWeddingDate());
+
 				System.out.println();
 
 

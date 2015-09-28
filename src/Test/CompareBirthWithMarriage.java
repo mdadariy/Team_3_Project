@@ -1,4 +1,4 @@
-package src.Test;
+package Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -20,4 +20,5 @@ public class CompareBirthWithMarriage {
         } else {
             return false;
         }
+    }
 }
