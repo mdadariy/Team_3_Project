@@ -1,4 +1,4 @@
-package src.Test;
+package Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -16,7 +16,7 @@ public class ChildBirthBeforeDeathOfMother {
         Date deathDate = format.parse(deathDateOfMotherString);
 
         if (birthDate.compareTo(deathDate) == 1) {
-            System.out.println("Error:Child Birth is after parents death date.");
+            System.out.println("Error: Child Birth is after monther's death date.");
             return false;
         } else {
             return true;
