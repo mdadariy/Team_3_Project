@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.*;
+
 /**
  * Created by dinever on 9/24/15.
  */
@@ -14,6 +16,8 @@ public class Family {
     private String type;
     private String weddingDate;
     private String divorceDate;
+    private String[] childId = new String[20];
+    private List<String> childIdList = new ArrayList<String>();
 
     public String getId() {
         return id;
@@ -77,5 +81,13 @@ public class Family {
 
     public Individual getWife() {
         return this.wife;
+    }
+
+    public void appendChild(String child) {
+        this.childIdList.add(child);
+    }
+
+    public List<String> getChildList() {
+        return this.childIdList;
     }
 }

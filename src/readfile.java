@@ -42,6 +42,9 @@ public class readfile {
 				System.out.println("Family Wife: " + fam.getWife().getName());
 				System.out.println("Family Wedding Date: " + fam.getWeddingDate());
 				System.out.println("Family Divorce Date: " + fam.getDivorceDate());
+				for (int j = 0; j < fam.getChildList().size(); j++) {
+					System.out.println("Family Child: " + fam.getChildList().get(j));
+				}
 
 				if (fam.getDivorceDate() != null && fam.getWeddingDate() != null) {
 					Test.CompareDivorceMarriage.compare(fam.getWeddingDate(), fam.getDivorceDate());
@@ -52,6 +55,12 @@ public class readfile {
 
 				if (fam.getWife() != null && fam.getWeddingDate() != null)
 					CompareBirthWithMarriage.compare(fam.getWife().getBirthDate(), fam.getWeddingDate());
+
+				if (fam.getHusband() != null && fam.getWeddingDate() != null)
+					CompareMarriage14.compare(fam.getHusband().getBirthDate(), fam.getWeddingDate());
+
+				if (fam.getWife() != null && fam.getWeddingDate() != null)
+					CompareMarriage14.compare(fam.getWife().getBirthDate(), fam.getWeddingDate());
 
 				System.out.println();
 

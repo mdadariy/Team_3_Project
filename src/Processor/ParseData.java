@@ -80,6 +80,8 @@ public class ParseData {
                             fam.setHusbandId(getId(arguments));
                         } else if ("WIFE".equals(tag)) {
                             fam.setWifeId(getId(arguments));
+                        } else if ("CHIL".equals(tag)) {
+                            fam.appendChild(getId(arguments));
                         }
                         if ("MARR".equals(tag)) {
                             line = bufferRead.readLine();
