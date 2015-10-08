@@ -4,7 +4,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class CompareBirthDate {
+/**
+ * User Story 5
+ */
+
+public class BirthBeforeDeath {
     public static boolean compare(String birthDateString, String deathDateString) throws ParseException {
         SimpleDateFormat format = new SimpleDateFormat("dd MMM yyyy");
 

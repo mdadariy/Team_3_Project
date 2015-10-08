@@ -5,7 +5,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class CompareDivorceMarriage {
+/**
+ * User Story 6
+ */
+public class MarriageBeforeDivorce {
     public static boolean compare (String marriageDateString, String divorceDateString) throws ParseException {
         SimpleDateFormat format = new SimpleDateFormat("dd MMM yyyy");
 

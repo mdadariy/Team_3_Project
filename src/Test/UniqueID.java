@@ -5,8 +5,9 @@ import java.util.List;
 
 /**
  * Created by dinever on 9/24/15.
+ * User Story 2
  */
-public class UnitId {
+public class UniqueID {
     public static boolean checkUniqueId(Individual ind, List<Individual> individuals) {
         String indId = ind.getId();
         for (int i = 0; i < individuals.size(); i++) {

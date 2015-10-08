@@ -6,8 +6,9 @@ import java.util.Date;
 
 /**
  * Created by Mukta on 9/28/15.
+ * User Story 3
  */
-public class CompareWithCurrentDate {
+public class DateBeforeCurrentDate {
     public static boolean compare(String datesString) throws ParseException {
         SimpleDateFormat format = new SimpleDateFormat("dd MMM yyyy");
 

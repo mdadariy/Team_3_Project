@@ -6,8 +6,9 @@ import java.util.Date;
 
 /**
  * Created by Mukta on 9/28/15.
+ * User Story 4
  */
-public class CompareBirthWithMarriage {
+public class BirthBeforeMarriage {
     public static boolean compare (String birthDateString, String marriageDateString) throws ParseException {
         SimpleDateFormat format = new SimpleDateFormat("dd MMM yyyy");
 

@@ -4,6 +4,7 @@ import Processor.ParseData;
 import java.lang.Exception;
 
 import Test.*;
+import src.Test.MarriageBeforeDeath;
 
 public class readfile {
 	public static void main(String[] args) {
@@ -23,13 +24,13 @@ public class readfile {
 					System.out.println("Death Date: " + ind.getDeathDate());
 				}
 
-				UnitId.checkUniqueId(ind, p.individuals);
+				Test.UniqueID.checkUniqueId(ind, p.individuals);
 				if (ind.getDeathDate() != null) {
-					CompareBirthDate.compare(ind.getBirthDate(), ind.getDeathDate());
+					Test.BirthBeforeDeath.compare(ind.getBirthDate(), ind.getDeathDate());
 				}
 
 				if (ind.getBirthDate() != null) {
-					CompareWithCurrentDate.compare(ind.getBirthDate());
+					Test.DateBeforeCurrentDate.compare(ind.getBirthDate());
 				}
 				// This is the part that individuals can be tested.
 				System.out.println();
@@ -47,20 +48,26 @@ public class readfile {
 				}
 
 				if (fam.getDivorceDate() != null && fam.getWeddingDate() != null) {
-					Test.CompareDivorceMarriage.compare(fam.getWeddingDate(), fam.getDivorceDate());
+					Test.MarriageBeforeDivorce.compare(fam.getWeddingDate(), fam.getDivorceDate());
 				}
 
 				if (fam.getHusband() != null && fam.getWeddingDate() != null)
-					CompareBirthWithMarriage.compare(fam.getHusband().getBirthDate(), fam.getWeddingDate());
+					Test.BirthBeforeMarriage.compare(fam.getHusband().getBirthDate(), fam.getWeddingDate());
 
 				if (fam.getWife() != null && fam.getWeddingDate() != null)
-					CompareBirthWithMarriage.compare(fam.getWife().getBirthDate(), fam.getWeddingDate());
+					Test.BirthBeforeMarriage.compare(fam.getWife().getBirthDate(), fam.getWeddingDate());
 
 				if (fam.getHusband() != null && fam.getWeddingDate() != null)
-					CompareMarriage14.compare(fam.getHusband().getBirthDate(), fam.getWeddingDate());
+					Test.MarriageAfter14.compare(fam.getHusband().getBirthDate(), fam.getWeddingDate());
 
 				if (fam.getWife() != null && fam.getWeddingDate() != null)
-					CompareMarriage14.compare(fam.getWife().getBirthDate(), fam.getWeddingDate());
+					Test.MarriageAfter14.compare(fam.getWife().getBirthDate(), fam.getWeddingDate());
+
+				if (fam.getHusband() != null && fam.getWeddingDate() != null)
+					MarriageBeforeDeath.compare(fam.getHusband().getBirthDate(), fam.getWeddingDate());
+
+				if (fam.getWife() != null && fam.getWeddingDate() != null)
+					MarriageBeforeDeath.compare(fam.getWife().getBirthDate(), fam.getWeddingDate());
 
 				System.out.println();
 

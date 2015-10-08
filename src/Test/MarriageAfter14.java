@@ -2,8 +2,10 @@ package Test;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-public class CompareMarriage14 {
+/**
+ * User Story 12
+ */
+public class MarriageAfter14 {
 
     public static void compare(String birthDateString, String marriageDateString) {
 

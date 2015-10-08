@@ -3,7 +3,11 @@ import java.text.ParseException ;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class CompareDivorceDeath {
+/**
+ * User Story 8
+ */
+
+public class DivorceBeforeDeath {
     public static boolean compare(String divorceDate, String deathDate)
     {
         try{
