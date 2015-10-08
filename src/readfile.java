@@ -72,6 +72,10 @@ public class readfile {
 					Test.ChildBirthBeforeDeathOfMother.compare(fam.getChildList().get(j).getBirthDate(), fam.getWife().getBirthDate());
 				}
 
+				for (int j = 0; j < fam.getChildList().size(); j++) {
+					Test.ChildBirthBeforeMarriageOfParents.compare(fam.getChildList().get(j).getBirthDate(), fam.getWeddingDate());
+				}
+
 				System.out.println();
 
 
