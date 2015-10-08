@@ -4,11 +4,10 @@ import Processor.ParseData;
 import java.lang.Exception;
 
 import Test.*;
-import src.Test.MarriageBeforeDeath;
 
 public class readfile {
 	public static void main(String[] args) {
-		String filename = "My-family-11-Sep-2015.ged";
+		String filename = "My-Family-11-Sep-2015.ged";
 		ParseData p = new ParseData();
 		try {
 			p.readFile(filename);
@@ -44,7 +43,7 @@ public class readfile {
 				System.out.println("Family Wedding Date: " + fam.getWeddingDate());
 				System.out.println("Family Divorce Date: " + fam.getDivorceDate());
 				for (int j = 0; j < fam.getChildList().size(); j++) {
-					System.out.println("Family Child: " + fam.getChildList().get(j));
+					System.out.println("Family Child: " + fam.getChildList().get(j).getName());
 				}
 
 				if (fam.getDivorceDate() != null && fam.getWeddingDate() != null) {
@@ -64,10 +63,10 @@ public class readfile {
 					Test.MarriageAfter14.compare(fam.getWife().getBirthDate(), fam.getWeddingDate());
 
 				if (fam.getHusband() != null && fam.getWeddingDate() != null)
-					MarriageBeforeDeath.compare(fam.getHusband().getBirthDate(), fam.getWeddingDate());
+					Test.MarriageBeforeDeath.compare(fam.getHusband().getBirthDate(), fam.getWeddingDate());
 
 				if (fam.getWife() != null && fam.getWeddingDate() != null)
-					MarriageBeforeDeath.compare(fam.getWife().getBirthDate(), fam.getWeddingDate());
+					Test.MarriageBeforeDeath.compare(fam.getWife().getBirthDate(), fam.getWeddingDate());
 
 				System.out.println();
 

@@ -81,7 +81,7 @@ public class ParseData {
                         } else if ("WIFE".equals(tag)) {
                             fam.setWifeId(getId(arguments));
                         } else if ("CHIL".equals(tag)) {
-                            fam.appendChild(getId(arguments));
+                            fam.appendChildId(getId(arguments));
                         }
                         if ("MARR".equals(tag)) {
                             line = bufferRead.readLine();
@@ -144,6 +144,10 @@ public class ParseData {
             }
             if (fam.getWifeId() != null) {
                 fam.setWife(getIndividual(fam.getWifeId()));
+            }
+            if (!fam.getChildIdList().isEmpty()) {
+                for (int j = 0; j < fam.getChildIdList().size(); j++)
+                fam.appendChild(getIndividual(fam.getChildIdList().get(j)));
             }
         }
     }

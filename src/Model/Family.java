@@ -16,8 +16,8 @@ public class Family {
     private String type;
     private String weddingDate;
     private String divorceDate;
-    private String[] childId = new String[20];
     private List<String> childIdList = new ArrayList<String>();
+    private List<Individual> childList = new ArrayList<Individual>();
 
     public String getId() {
         return id;
@@ -83,11 +83,19 @@ public class Family {
         return this.wife;
     }
 
-    public void appendChild(String child) {
-        this.childIdList.add(child);
+    public void appendChildId(String childId) {
+        this.childIdList.add(childId);
     }
 
-    public List<String> getChildList() {
+    public List<String> getChildIdList() {
         return this.childIdList;
+    }
+
+    public void appendChild(Individual child) {
+        this.childList.add(child);
+    }
+
+    public List<Individual> getChildList() {
+        return this.childList;
     }
 }
