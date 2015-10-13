@@ -2,6 +2,8 @@ import Model.Family;
 import Model.Individual;
 import Processor.ParseData;
 import java.lang.Exception;
+import java.util.Collections;
+import java.util.List;
 
 import Test.*;
 
@@ -73,12 +75,25 @@ public class readfile {
 				}
 
 				for (int j = 0; j < fam.getChildList().size(); j++) {
-					Test.ChildBirthBeforeMarriageOfParents.compare(fam.getChildList().get(j).getBirthDate(), fam.getWeddingDate());
+					if (fam.getWeddingDate() != null)
+						Test.ChildBirthBeforeMarriageOfParents.compare(fam.getChildList().get(j).getBirthDate(), fam.getWeddingDate());
 				}
 
-				System.out.println();
+				List<Individual> childList = fam.getChildList();
+				Collections.sort(childList);
+				for (int j = 0; j < fam.getChildList().size(); j++) {
+					System.out.println("Family Siblings:" + childList.get(j).getName() + "Age: " + childList.get(j).getAge());
+				}
 
+				// User Story 17
+				if ((fam.getHusband().getAge() >= 2*fam.getWife().getAge())
+						|| (2*fam.getHusband().getAge() <= fam.getWife().getAge())) {
+					System.out.println(fam.getHusband().getAge());
+					System.out.println(fam.getWife().getAge());
 
+					System.out.println("Husband and Wife has large age difference. \nHusband: " + fam.getHusband().getName() +
+					"\t Wife: " + fam.getWife().getName());
+				}
 			}
 		} catch (Exception e) {
 		}

@@ -1,9 +1,11 @@
 package Model;
 
 import java.util.*;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 //class for individual
-public class Individual {
+public class Individual implements Comparable<Individual> {
 
     // the info list for individual
     private String id;
@@ -69,4 +71,32 @@ public class Individual {
     public String getDeathDate() {
         return this.deathDate;
     }
+
+    public double getAge() {
+        try {
+            SimpleDateFormat format = new SimpleDateFormat("dd MMM yyyy");
+
+            Date birthDate = format.parse(this.getBirthDate());
+            Date currentDate = new Date();
+
+            long diff = currentDate.getTime() - birthDate.getTime();
+            long diffHours = diff / (60 * 60 * 1000);
+            long diffDays = diffHours / 24; // 48
+            double diffYear = diffDays / 365.0;
+            return diffYear;
+        } catch (Exception ex) {}
+        return 0.0;
+    }
+
+    public int compareTo(Individual other)
+    {
+        if (this.getAge() > other.getAge())
+            return 1;
+        if (this.getAge() < other.getAge())
+            return -1;
+        else
+            return 0;
+    }
+
 }
+
