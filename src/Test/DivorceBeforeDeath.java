@@ -1,3 +1,5 @@
+package Test;
+
 //Compare the divorse date and the death date
 import java.text.ParseException ;
 import java.text.SimpleDateFormat;
@@ -20,7 +22,7 @@ public class DivorceBeforeDeath {
             //System.out.println(sdf.format(DIV));
 
             if(DIV.compareTo(DEAT)>0){
-                System.out.println("Error:Divorse date is after Death Date which is not possible");
+                System.out.println("Error:Divorce date is after Death Date which is not possible");
                 return false;
             }else
             return true;

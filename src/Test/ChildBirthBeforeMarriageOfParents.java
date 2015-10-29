@@ -16,7 +16,7 @@ public class ChildBirthBeforeMarriageOfParents {
         Date parentsMarriageDate = format.parse(parentsMarriageDateString);
 
         if (childBirthDate.compareTo(parentsMarriageDate) == 1) {
-            System.out.println("Error: Marriage date is after the divorce date.");
+            System.out.println("Error: Child birth date should not be before marriage date of parents.");
             return true;
         } else {
             return false;
