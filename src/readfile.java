@@ -71,10 +71,10 @@ public class readfile {
 				if (fam.getWife() != null && fam.getWeddingDate() != null)
 					Test.MarriageBeforeDeath.compare(fam.getWife().getBirthDate(), fam.getWeddingDate());
 
-				if (fam.getWife() != null && fam.getWeddingDate() != null)
+				if (fam.getWife() != null && fam.getWeddingDate() != null && fam.getWife().getDeathDate() != null)
 					Test.DivorceBeforeDeath.compare(fam.getDivorceDate(), fam.getWife().getDeathDate());
 
-				if (fam.getHusband() != null && fam.getWeddingDate() != null)
+				if (fam.getHusband() != null && fam.getWeddingDate() != null && fam.getHusband().getDeathDate() != null)
 					Test.DivorceBeforeDeath.compare(fam.getDivorceDate(), fam.getHusband().getDeathDate());
 
 				for (int j = 0; j < fam.getChildList().size(); j++) {
@@ -93,16 +93,10 @@ public class readfile {
 				}
 
 				// User Story 17
-				if ((fam.getHusband().getAge() >= 2*fam.getWife().getAge())
-						|| (2*fam.getHusband().getAge() <= fam.getWife().getAge())) {
-					System.out.println(fam.getHusband().getAge());
-					System.out.println(fam.getWife().getAge());
-
-					System.out.println("Husband and Wife has large age difference. \nHusband: " + fam.getHusband().getName() +
-					"\t Wife: " + fam.getWife().getName());
-				}
+					Test.ListLargeAgeDifference.check(fam);
 			}
 		} catch (Exception e) {
+			System.out.println(e);
 		}
 	}
 }
