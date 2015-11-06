@@ -78,11 +78,12 @@ public class readfile {
 					Test.DivorceBeforeDeath.compare(fam.getDivorceDate(), fam.getHusband().getDeathDate());
 
 				for (int j = 0; j < fam.getChildList().size(); j++) {
-					Test.ChildBirthBeforeDeathOfMother.compare(fam.getChildList().get(j).getBirthDate(), fam.getWife().getBirthDate());
+					if (fam.getChildList().get(j).getBirthDate() != null && fam.getWife().getBirthDate() != null)
+						Test.ChildBirthBeforeDeathOfMother.compare(fam.getChildList().get(j).getBirthDate(), fam.getWife().getBirthDate());
 				}
 
 				for (int j = 0; j < fam.getChildList().size(); j++) {
-					if (fam.getWeddingDate() != null)
+					if (fam.getChildList().get(j).getBirthDate() != null && fam.getWeddingDate() != null)
 						Test.ChildBirthBeforeMarriageOfParents.compare(fam.getChildList().get(j).getBirthDate(), fam.getWeddingDate());
 				}
 
@@ -92,8 +93,10 @@ public class readfile {
 					System.out.println("Family Siblings:" + childList.get(j).getName() + "Age: " + childList.get(j).getAge());
 				}
 
+				Test.FewerThan15Siblings.compare(fam);
+
 				// User Story 17
-					Test.ListLargeAgeDifference.check(fam);
+//					Test.ListLargeAgeDifference.check(fam);
 			}
 		} catch (Exception e) {
 			System.out.println(e);

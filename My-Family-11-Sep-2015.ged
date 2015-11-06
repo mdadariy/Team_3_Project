@@ -183,3 +183,95 @@
 2 DATE 20 JAN 1705
 1 _CURRENT Y
 0 TRLR
+0 @F6@ FAM
+1 HUSB @I14@
+1 WIFE @I15@
+1 CHIL @I16@
+1 CHIL @I17@
+1 CHIL @I18@
+1 CHIL @I19@
+1 CHIL @I20@
+1 CHIL @I21@
+1 CHIL @I22@
+1 CHIL @I23@
+1 CHIL @I24@
+1 CHIL @I25@
+1 CHIL @I26@
+1 CHIL @I27@
+1 CHIL @I28@
+1 CHIL @I29@
+1 CHIL @I30@
+1 CHIL @I31@
+1 _CURRENT N
+0 @I14@ INDI
+1 NAME Veer /Piparsaniya/
+2 GIVN Veer
+2 SURN Piparsaniya
+0 @I15@ INDI
+1 NAME Veer /Piparsaniya/
+2 GIVN Veer
+2 SURN Piparsaniya
+0 @I16@ INDI
+1 NAME Veer /Piparsaniya/
+2 GIVN Veer
+2 SURN Piparsaniya
+0 @I17@ INDI
+1 NAME Veer /Piparsaniya/
+2 GIVN Veer
+2 SURN Piparsaniya
+0 @I18@ INDI
+1 NAME Veer /Piparsaniya/
+2 GIVN Veer
+2 SURN Piparsaniya
+0 @I19@ INDI
+1 NAME Veer /Piparsaniya/
+2 GIVN Veer
+2 SURN Piparsaniya
+0 @I20@ INDI
+1 NAME Veer /Piparsaniya/
+2 GIVN Veer
+2 SURN Piparsaniya
+0 @I21@ INDI
+1 NAME Veer /Piparsaniya/
+2 GIVN Veer
+2 SURN Piparsaniya
+0 @I22@ INDI
+1 NAME Veer /Piparsaniya/
+2 GIVN Veer
+2 SURN Piparsaniya
+0 @I23@ INDI
+1 NAME Veer /Piparsaniya/
+2 GIVN Veer
+2 SURN Piparsaniya
+0 @I24@ INDI
+1 NAME Veer /Piparsaniya/
+2 GIVN Veer
+2 SURN Piparsaniya
+0 @I25@ INDI
+1 NAME Veer /Piparsaniya/
+2 GIVN Veer
+2 SURN Piparsaniya
+0 @I26@ INDI
+1 NAME Veer /Piparsaniya/
+2 GIVN Veer
+2 SURN Piparsaniya
+0 @I27@ INDI
+1 NAME Veer /Piparsaniya/
+2 GIVN Veer
+2 SURN Piparsaniya
+0 @I28@ INDI
+1 NAME Veer /Piparsaniya/
+2 GIVN Veer
+2 SURN Piparsaniya
+0 @I29@ INDI
+1 NAME Veer /Piparsaniya/
+2 GIVN Veer
+2 SURN Piparsaniya
+0 @I30@ INDI
+1 NAME Veer /Piparsaniya/
+2 GIVN Veer
+2 SURN Piparsaniya
+0 @I31@ INDI
+1 NAME Veer /Piparsaniya/
+2 GIVN Veer
+2 SURN Piparsaniya
