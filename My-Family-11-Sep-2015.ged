@@ -183,6 +183,18 @@
 2 DATE 20 JAN 1705
 1 _CURRENT Y
 0 TRLR
+0 @F7@ FAM
+1 HUSB @I32@
+1 WIFE @I33@
+1 CHIL @I32@
+0 @I32@ INDI
+1 NAME Vr /Piparsaniya/
+2 GIVN Vr
+2 SURN Piparsaniya
+0 @I33@ INDI
+1 NAME Ver /Piparsaniya/
+2 GIVN Ver
+2 SURN Piparsaniya
 0 @F6@ FAM
 1 HUSB @I14@
 1 WIFE @I15@

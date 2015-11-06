@@ -94,6 +94,7 @@ public class readfile {
 				}
 
 				Test.FewerThan15Siblings.compare(fam);
+				Test.NoMarriagesToDescendants.compare(fam);
 
 				// User Story 17
 //					Test.ListLargeAgeDifference.check(fam);
