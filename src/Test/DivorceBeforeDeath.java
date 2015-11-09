@@ -22,7 +22,7 @@ public class DivorceBeforeDeath {
             //System.out.println(sdf.format(DIV));
 
             if(DIV.compareTo(DEAT)>0){
-                System.out.println("Error:Divorce date is after Death Date which is not possible");
+                System.out.println("Error: Divorce date is after Death Date which is not possible");
                 return false;
             }else
             return true;

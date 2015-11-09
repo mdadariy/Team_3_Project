@@ -13,7 +13,7 @@ import Model.Individual;
  * User Story 15
  */
 public class FewerThan15Siblings {
-    public static boolean compare (Family fam) throws ParseException {
+    public static boolean compare (Family fam){
         if (fam.getChildList().size() >= 15) {
             System.out.println("Error: There should be fewer than 15 siblings in a family.");
             return false;

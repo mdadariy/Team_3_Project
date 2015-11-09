@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 import Test.*;
+import sun.misc.Compare;
 
 public class readfile {
 	public static void main(String[] args) {
@@ -87,14 +88,24 @@ public class readfile {
 						Test.ChildBirthBeforeMarriageOfParents.compare(fam.getChildList().get(j).getBirthDate(), fam.getWeddingDate());
 				}
 
+				for (int j = 0; j < fam.getChildList().size(); j++) {
+					if (fam.getChildList().get(j).getBirthDate() != null && fam.getWife().getBirthDate() != null && fam.getHusband().getDeathDate() != null)
+						Test.ParentsNotTooOld.compare(fam.getChildList().get(j).getBirthDate(), fam.getHusband().getBirthDate(), fam.getWife().getBirthDate());
+				}
+
+				CompareLastNames.check(fam);
+
 				List<Individual> childList = fam.getChildList();
 				Collections.sort(childList);
 				for (int j = 0; j < fam.getChildList().size(); j++) {
-					System.out.println("Family Siblings:" + childList.get(j).getName() + "Age: " + childList.get(j).getAge());
+					System.out.println("Family Siblings :" + childList.get(j).getName() + " Age: " + childList.get(j).getAge());
 				}
 
+				Test.ListLargeAgeDifference.check(fam);
 				Test.FewerThan15Siblings.compare(fam);
 				Test.NoMarriagesToDescendants.compare(fam);
+				Test.MultipleBirthsLessThanFive.compare(fam);
+
 
 				// User Story 17
 //					Test.ListLargeAgeDifference.check(fam);
