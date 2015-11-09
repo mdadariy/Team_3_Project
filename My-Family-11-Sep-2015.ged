@@ -1,9 +1,9 @@
 0 NOTE - mdadariy/P02
 0 HEAD
 1 SOUR Family Echo
-2 WWW http://www.familyecho.com/
-1 FILE My Family
-1 DATE 11 SEP 2015
+1 NAME Ver /Piparsaniya/
+2 GIVN Ver
+2 SURN Piparsaniya
 1 DEST ANSTFILE
 1 GEDC
 2 VERS 5.5.1
@@ -20,6 +20,15 @@
 1 SEX F
 1 BIRT
 2 DATE 20 FEB 1789
+1 FAMC @F1@
+0 @I1@ INDI
+1 NAME Mukta /Dadariya/
+2 GIVN Mukta
+2 SURN Dadariya
+2 _MARNM Dadariya
+1 SEX F
+1 BIRT
+2 DATE 20 FEB 2089
 1 FAMC @F1@
 0 @I2@ INDI
 1 NAME Mukund /Dadariya/
@@ -183,18 +192,6 @@
 2 DATE 20 JAN 1705
 1 _CURRENT Y
 0 TRLR
-0 @F7@ FAM
-1 HUSB @I32@
-1 WIFE @I33@
-1 CHIL @I32@
-0 @I32@ INDI
-1 NAME Vr /Piparsaniya/
-2 GIVN Vr
-2 SURN Piparsaniya
-0 @I33@ INDI
-1 NAME Ver /Piparsaniya/
-2 GIVN Ver
-2 SURN Piparsaniya
 0 @F6@ FAM
 1 HUSB @I14@
 1 WIFE @I15@
@@ -287,3 +284,70 @@
 1 NAME Veer /Piparsaniya/
 2 GIVN Veer
 2 SURN Piparsaniya
+0 NOTE User Story 16
+0 @F7@ FAM
+1 HUSB @I32@
+1 WIFE @I33@
+1 CHIL @I32@
+0 @I32@ INDI
+1 NAME Vr /Piparsaniya/
+2 GIVN Vr
+2 SURN Piparsaniya
+0 @I33@ INDI
+1 NAME Ver /Piparsaniya/
+2 GIVN Ver
+2 SURN Piparsaniya
+0 NOTE User Story 21
+0 @F8@ FAM
+1 HUSB @I34@
+1 WIFE @I35@
+1 CHIL @I36@
+1 CHIL @I37@
+1 CHIL @I38@
+1 CHIL @I39@
+1 CHIL @I40@
+1 CHIL @I41@
+0 @I34@ INDI
+1 NAME Amy /Kawaguchi/
+2 GIVN Amy
+2 SURN Kawaguchi
+0 @I35@ INDI
+1 NAME Erica /Cain/
+2 GIVN Erica
+2 SURN Cain
+0 @I36@ INDI
+1 NAME Solomon /Alford/
+2 GIVN Alford
+2 SURN Piparsaniya
+1 BIRT
+2 DATE 20 FEB 1989
+0 @I37@ INDI
+1 NAME Solomon /Alford/
+2 GIVN Alford
+2 SURN Piparsaniya
+1 BIRT
+2 DATE 20 FEB 1989
+0 @I38@ INDI
+1 NAME Solomon /Alford/
+2 GIVN Alford
+2 SURN Piparsaniya
+1 BIRT
+2 DATE 20 FEB 1989
+0 @I39@ INDI
+1 NAME Solomon /Alford/
+2 GIVN Alford
+2 SURN Piparsaniya
+1 BIRT
+2 DATE 20 FEB 1989
+0 @I40@ INDI
+1 NAME Solomon /Alford/
+2 GIVN Alford
+2 SURN Piparsaniya
+1 BIRT
+2 DATE 20 FEB 1989
+0 @I41@ INDI
+1 NAME Solomon /Alford/
+2 GIVN Alford
+2 SURN Piparsaniya
+1 BIRT
+2 DATE 20 FEB 1989
