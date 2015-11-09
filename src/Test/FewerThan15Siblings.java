@@ -15,7 +15,7 @@ import Model.Individual;
 public class FewerThan15Siblings {
     public static boolean compare (Family fam){
         if (fam.getChildList().size() >= 15) {
-            System.out.println("Error: There should be fewer than 15 siblings in a family.");
+            System.out.println("Error: Fewer than 15 siblings: There should be fewer than 15 siblings in a family.");
             return false;
         }
         return true;

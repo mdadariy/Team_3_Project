@@ -20,7 +20,7 @@ public class MultipleBirthsLessThanFive {
                 map.put(childBirth, ++count);
             }
             if (map.get(childBirth) >= 5) {
-                System.out.println("Error: No more than five siblings should be born at the same time");
+                System.out.println("Error: Multiple birth less than 5: No more than five siblings should be born at the same time");
                 return false;
             }
         }

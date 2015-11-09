@@ -22,9 +22,9 @@ public class ParentsNotTooOld {
             long diffYearChildAndFather = diffChildAndFather / (60 * 60 * 1000 * 24 * 365);
             long diffYearChildAndMother = diffChildAndMother / (60 * 60 * 1000 * 24 * 365);
             if (diffYearChildAndFather > 80)
-                System.out.println("Error: Father should be less than 80 years old than child.");
+                System.out.println("Error: Parents not too old: Father should be less than 80 years old than child.");
             if (diffYearChildAndMother > 60)
-                System.out.println("Error: Mother should be less than 60 years old than child.");
+                System.out.println("Error: Parents not too old: Mother should be less than 60 years old than child.");
         } catch (Exception ex) {
 
         }
