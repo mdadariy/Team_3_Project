@@ -107,10 +107,17 @@ public class readfile {
 				Test.CorrectGenderForRole.compare(fam);
 
 
+
 				// User Story 17
-//					Test.ListLargeAgeDifference.check(fam);
+//					Test.ListLargeAgeDifference.check(fam)
 			}
-		} catch (Exception e) {
+			System.out.println();
+			System.out.println("Following are the list of living husbands and wifes: ");
+			for (int i = 0; i < p.families.size(); i++) {
+				Family fam = p.families.get(i);
+				Test.ListLivingMarried.compare(fam);
+			}
+			} catch (Exception e) {
 			System.out.println(e);
 		}
 	}
