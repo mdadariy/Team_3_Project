@@ -33,6 +33,7 @@ public class readfile {
 				if (ind.getBirthDate() != null) {
 					Test.DateBeforeCurrentDate.compare(ind.getBirthDate());
 				}
+				Test.LessThan150YearsOld.compare(ind);
 				// This is the part that individuals can be tested.
 				System.out.println();
 			}
@@ -97,7 +98,7 @@ public class readfile {
 				List<Individual> childList = fam.getChildList();
 				Collections.sort(childList);
 				for (int j = 0; j < fam.getChildList().size(); j++) {
-					System.out.println("Family Siblings :" + childList.get(j).getName() + " Age: " + childList.get(j).getAge());
+					System.out.println("Family Siblings: " + childList.get(j).getName() + " Age: " + childList.get(j).getAge());
 				}
 
 				Test.ListLargeAgeDifference.check(fam);
@@ -105,17 +106,27 @@ public class readfile {
 				Test.NoMarriagesToDescendants.compare(fam);
 				Test.MultipleBirthsLessThanFive.compare(fam);
 				Test.CorrectGenderForRole.compare(fam);
-
-
-
-				// User Story 17
-//					Test.ListLargeAgeDifference.check(fam)
+				Test.ListLargeAgeDifference.check(fam);
+				Test.FirstCousinShouldNotMarry.test(fam);
+				Test.SibilingsShouldNotMarry.compare(fam);
 			}
 			System.out.println();
 			System.out.println("Following are the list of living husbands and wifes: ");
 			for (int i = 0; i < p.families.size(); i++) {
 				Family fam = p.families.get(i);
 				Test.ListLivingMarried.compare(fam);
+			}
+			System.out.println();
+			System.out.println("Following are the list of living people over 30 and not married: ");
+			for (int i = 0; i < p.individuals.size(); i++) {
+				Individual ind = p.individuals.get(i);
+				Test.ListLivingSingle.list(ind);
+			}
+			System.out.println();
+			System.out.println("Following are the list of orphans: ");
+			for (int i = 0; i < p.individuals.size(); i++) {
+				Individual ind = p.individuals.get(i);
+				Test.ListOrphans.list(ind);
 			}
 			} catch (Exception e) {
 			System.out.println(e);

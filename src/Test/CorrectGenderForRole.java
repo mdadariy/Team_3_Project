@@ -8,8 +8,12 @@ import Model.*;
  */
 public class CorrectGenderForRole {
         public static boolean compare (Model.Family fam){
-            if (fam.getHusband().getSex() != 'M' || fam.getWife().getSex() != 'F') {
-                System.out.println("Error: Husband should be male and wife should be female");
+            if (fam.getHusband().getSex() != 'M') {
+                System.out.println("Error: Incorrect gender for husband.");
+                return false;
+            }
+            if (fam.getWife().getSex() != 'F') {
+                System.out.println("Error: Incorrect gender for wife.");
                 return false;
             }
             return true;
