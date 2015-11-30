@@ -16,6 +16,19 @@ public class Individual implements Comparable<Individual> {
     private String birthDate;
     private String deathDate;
 
+    private Individual mother;
+    private Individual father;
+
+    private Individual spouse;
+
+    public Individual getSpouse() {
+        return this.spouse;
+    }
+
+    public void setSpouse(Individual ind) {
+        this.spouse = ind;
+    }
+
     public void setId (String id) {
         this.id = id;
     }
@@ -47,6 +60,14 @@ public class Individual implements Comparable<Individual> {
     public String getGivenName () {
         return this.givenName;
     }
+
+    public Individual getMother () { return this.mother; }
+
+    public void setMother (Individual mother) { this.mother = mother; }
+
+    public Individual getFather () { return this.father; }
+
+    public void setFather (Individual father) { this.father= father; }
 
     public void setSex (char sex) {
         this.sex = sex;
@@ -98,5 +119,36 @@ public class Individual implements Comparable<Individual> {
             return 0;
     }
 
+    public Individual getFathersFather() {
+        if (this.getFather() != null) {
+            if (this.getFather().getFather() != null)
+                return this.getFather().getFather();
+        }
+        return null;
+    }
+
+    public Individual getFathersMother() {
+        if (this.getFather() != null) {
+            if (this.getFather().getFather() != null)
+                return this.getFather().getFather();
+        }
+        return null;
+    }
+
+    public Individual getMothersFather() {
+        if (this.getFather() != null) {
+            if (this.getFather().getFather() != null)
+                return this.getFather().getFather();
+        }
+        return null;
+    }
+
+    public Individual getMothersMother() {
+        if (this.getFather() != null) {
+            if (this.getFather().getFather() != null)
+                return this.getFather().getFather();
+        }
+        return null;
+    }
 }
 

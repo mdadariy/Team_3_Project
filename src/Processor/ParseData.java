@@ -122,6 +122,8 @@ public class ParseData {
         }
 
         setIndividualsInFamilies();
+        setIndividualParents();
+        setIndividualSpouses();
     }
 
     public Individual getIndividual(String id) {
@@ -147,7 +149,33 @@ public class ParseData {
             }
             if (!fam.getChildIdList().isEmpty()) {
                 for (int j = 0; j < fam.getChildIdList().size(); j++)
-                fam.appendChild(getIndividual(fam.getChildIdList().get(j)));
+                    fam.appendChild(getIndividual(fam.getChildIdList().get(j)));
+            }
+        }
+    }
+
+    public void setIndividualParents() {
+        for (int i = 0; i < families.size(); i++) {
+            Family fam = families.get(i);
+            if (fam.getHusband() != null) {
+                for (int j = 0; j < fam.getChildIdList().size(); j++) {
+                    fam.getChildList().get(j).setFather(fam.getHusband());
+                }
+            }
+            if (fam.getWife() != null) {
+                for (int j = 0; j < fam.getChildIdList().size(); j++) {
+                    fam.getChildList().get(j).setMother(fam.getWife());
+                }
+            }
+        }
+    }
+
+    public void setIndividualSpouses() {
+        for (int i = 0; i < families.size(); i++) {
+            Family fam = families.get(i);
+            if (fam.getHusband() != null && fam.getWife() != null) {
+                fam.getHusband().setSpouse(fam.getWife());
+                fam.getWife().setSpouse(fam.getHusband());
             }
         }
     }
